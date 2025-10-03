@@ -128,14 +128,39 @@
   border-radius: 8px;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
   .produtos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .produtos-grid {
-    grid-template-columns: 1fr; /* 1 por linha no celular */
+    grid-template-columns: 1fr; /* 1 produto por linha */
+  }
+
+  .filtros {
+    flex-direction: column;  /* filtros empilhados */
+    align-items: stretch;
+  }
+
+  .filtros input,
+  .filtros select {
+    width: 100%;  /* cada filtro ocupa largura total */
+  }
+
+  .modal-content {
+    padding: 15px; /* menos espaço */
+    width: 95%;    /* ocupa quase toda tela */
+  }
+
+  .modal-images {
+    gap: 10px;
+  }
+
+  .modal-images img {
+    max-height: 100px; /* miniaturas menores no celular */
   }
 }

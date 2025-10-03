@@ -124,16 +124,84 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
+  /* Hero */
   .home {
-    flex-direction: column; /* Texto em cima, imagem embaixo */
+    flex-direction: column;   /* Texto em cima, imagem embaixo */
     text-align: center;
+    padding: 40px 20px;
+  }
+
+  .home-texto {
+    max-width: 100%; /* Ocupa a largura inteira */
   }
 
   .home-texto h1 {
-    font-size: 24px;
+    font-size: 1.8rem; /* menor para caber */
   }
 
   .home-texto p {
-    font-size: 16px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .home-botoes {
+    flex-direction: column;  /* Botões um embaixo do outro */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .home-imagem img {
+    max-width: 90%;  /* Reduz a imagem */
+    margin-top: 20px;
+  }
+
+  /* Destaques */
+  .destaques {
+    padding: 40px 20px;
+  }
+
+  .destaques-container {
+    flex-direction: column; /* Cards um abaixo do outro */
+    gap: 20px;
+  }
+
+  /* Sobre */
+  .sobre {
+    padding: 40px 20px;
+  }
+
+  .sobre-conteudo {
+    flex-direction: column; /* Imagem em cima, texto embaixo */
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    max-width: 200px; /* Menor no mobile */
+  }
+
+  .sobre-texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+  }
+
+  /* Parceiros */
+  .parceiros {
+    padding: 40px 20px;
+  }
+
+  .parceiros h2 {
+    font-size: 1.5rem;
+  }
+
+  .parceiros-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .parceiros-grid img {
+    max-width: 120px;
   }
 }
