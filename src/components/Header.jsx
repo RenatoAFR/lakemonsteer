@@ -1,24 +1,34 @@
 import { Link } from "react-router-dom";
-import "../styles/Header.css"; // podemos separar estilos
-import logo from "../assets/LogoSemFundo.png"; // <- coloque sua logo em src/assets/logo.png
+import { useState } from "react";
+import "../styles/Header.css";
+import logo from "../assets/LogoSemFundo.png";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
-      {/* Logo clicável para a Home */}
+      {/* Logo */}
       <Link to="/" className="logo">
-        <img src={logo} alt="LogoSemFundo" className="logo-img" />
+        <img src={logo} alt="Logo" className="logo-img" />
       </Link>
+
+      {/* Botão menu mobile */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
       {/* Navegação */}
-      <nav>
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/produtos">Produtos</Link></li>
           <li><Link to="/contato">Contato</Link></li>
         </ul>
       </nav>
-    
-      {/* Botão WhatsApp */}
+
+
+      {/* WhatsApp */}
       <a
         className="btn-whats"
         href="https://wa.me/5500000000000"

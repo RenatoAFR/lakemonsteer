@@ -121,3 +121,19 @@
   transform: scale(1.1);
   filter: drop-shadow(0 0 20px #39ff14);
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Texto em cima, imagem embaixo */
+    text-align: center;
+  }
+
+  .home-texto h1 {
+    font-size: 24px;
+  }
+
+  .home-texto p {
+    font-size: 16px;
+  }
+}
