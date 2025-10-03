@@ -1,0 +1,62 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0D0D0D;
+  border-bottom: 2px solid #00E0FF;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 30px; /* ajusta espaço do logo até o menu */
+}
+
+nav ul {
+  display: flex;
+  gap: 100px; /* espaçamento maior entre os itens */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #ffffff;          /* deixa o texto branco para contraste */
+  font-weight: bold;       /* dá mais presença */
+  font-size: 18px;         /* aumenta um pouco o tamanho */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+nav ul li a:hover {
+  color: #39FF14;          /* verde neon no hover */
+  transform: scale(1.1);   /* leve zoom para destacar */
+}
+
+.btn-header {
+  background: #39FF14;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #0D0D0D;
+  font-weight: bold;
+  box-shadow: 0 0 12px #39FF14;
+  transition: 0.3s;
+}
+
+.btn-header:hover {
+  background: #00E0FF;
+  color: #FFFFFF;
+  box-shadow: 0 0 20px #00E0FF, 0 0 40px #39FF14;
+}
+
+/* Header.css */
+.logo-img {
+  height: 100px;   /* aumenta a altura */
+  width: auto;    /* mantém a proporção */
+  object-fit: contain; /* garante que não estique */
+  cursor: pointer;
+}
+

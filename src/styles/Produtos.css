@@ -1,0 +1,129 @@
+.produtos-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.produtos-page h2 {
+  color: #39FF14;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px #00E0FF;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* força 3 por linha */
+  gap: 20px; /* espaço entre os cards */
+  justify-items: center; /* centraliza os cards */
+}
+
+.produtos-grid > * {
+  max-width: 300px; /* limita largura dos cards */
+  width: 100%; /* ocupa espaço até o limite */
+}
+
+
+.filtros {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filtros input,
+.filtros select {
+  padding: 10px;
+  border: 2px solid #00ff55;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+}
+
+.filtros input::placeholder {
+  color: #aaa;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  border: 2px solid cyan;
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: limegreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: greenyellow;
+}
+
+.modal-images {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+.modal-images img {
+  max-height: 150px;
+  border-radius: 8px;
+  border: 2px solid cyan;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modal-images img:hover {
+  transform: scale(1.05);
+}
+
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 2000;
+}
+
+.zoom-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}

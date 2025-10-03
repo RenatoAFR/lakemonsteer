@@ -1,0 +1,123 @@
+/* Seção Hero */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.3);
+}
+.home-texto {
+  max-width: 50%;
+}
+.home-texto h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.home-texto p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.home-botoes {
+  display: flex;
+  gap: 15px;
+}
+.home-imagem img {
+  max-width: 500px;
+}
+
+/* Botões */
+.btn-verde {
+  background: #b8ff2b;
+  color: black;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn-azul {
+  background: #0b6ba8;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Nossos Destaques */
+.destaques {
+  text-align: center;
+  padding: 60px 10%;
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 225, 255, 0.486);
+}
+.destaques h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+.destaques-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Sobre a Loja */
+.sobre {
+  padding: 60px 10%;
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.3);
+}
+.sobre-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.sobre-imagem img {
+  max-width: 250px;
+}
+.sobre-texto h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.sobre-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Parceiros */
+.parceiros {
+  text-align: center;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.3);
+}
+
+.parceiros h2 {
+  color: #39ff14;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px #00e0ff;
+}
+
+.parceiros-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.parceiros-grid img {
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px #00ff55);
+}
+
+.parceiros-grid img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px #39ff14);
+}

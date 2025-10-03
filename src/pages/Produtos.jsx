@@ -1,0 +1,351 @@
+import React, { useState } from "react";
+import ProductCard from "../components/ProductCard";
+import "../styles/Produtos.css";
+
+// Lista temporária de produtos
+const produtos = [
+  //Acessórios
+  //Antenas
+  {
+    id: 21,
+    name: "Robozinho – Tamanho 10mm",
+    price: "00,00",
+    description: "Robozinho da Lake Monster são construídos em EVA, girador/snap, anzol wide gape 3/0 e miçanga selecionada. São indicadas para a pesca de superfície para a captura de grandes Tambacus, Tambaquis, utilizando boias cevadeiras. ",
+    type: "Antenas",
+    images: [ 
+      require("../assets/antenas/Robozinho10mm/10mm1.jpeg"),
+      require("../assets/antenas/Robozinho10mm/10mm2.jpeg"),
+      require("../assets/antenas/Robozinho10mm/10mm3.jpeg"),
+      require("../assets/antenas/Robozinho10mm/10mm4.jpeg"),
+    ]
+  },
+  {
+    id: 22,
+    name: "Robozinho – Tamanho 12mm",
+    price: "00,00",
+    description: "Robozinho da Lake Monster são construídos em EVA, girador/snap, anzol wide gape 3/0 e miçanga selecionada. São indicadas para a pesca de superfície para a captura de grandes Tambacus, Tambaquis, utilizando boias cevadeiras. ",
+    type: "Antenas",
+    images: [ 
+      require("../assets/antenas/Robozinho12mm/12mm1.jpeg"),
+      require("../assets/antenas/Robozinho12mm/12mm2.jpeg"),
+      require("../assets/antenas/Robozinho12mm/12mm3.jpeg"),
+    ]
+  },
+  //Boias
+  {
+    id: 3,
+    name: "Boia Guia N2 - Rosa/Branca",
+    price: "00,00",
+    description: "Boia Guia 10 Unidades.",
+    type: "Boias",
+    image: "https://via.placeholder.com/300x200?text=Carretilha"
+  },
+  {
+    id: 4,
+    name: "Boia Cavadeira - Rocket Albatroz Fishing",
+    price: "00,00",
+    description: "Boia Cavadeira.",
+    type: "Boias",
+    image: "https://via.placeholder.com/300x200?text=Carretilha"
+  },
+
+  //Equipamentos
+  {
+    id: 5,
+    name: "Vara Lumis Ibiza - Molinete",
+    price: "00,00",
+    description: "5`9 Pés - 25lbs - 1.80m / 2 Partes.",
+    type: "Equipamentos",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 1,
+    name: "Alicate de Pescas - Bestfer",
+    price: "00,00",
+    description: "Bico Longo - 7,5 Polegadas.",
+    type: "Equipamentos",
+    images: [require("../assets/equipamentos/AlicateBicoLongo75.jpeg")]
+  },
+  //Iscas
+  {
+    id: 2,
+    name: "Isca Artificial Premium",
+    price: "49,90",
+    description: "Design realista que atrai os maiores peixes.",
+    type: "Isca",
+    image: "https://via.placeholder.com/300x200?text=Isca+Artificial"
+  },
+  //Manhosinhos
+  {
+    id: 15,
+    name: "Manhosinho Borboleta – Tamanho 09mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Borboleta da Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada.",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Borboleta9mm/Manhosinho9mmLaranja.jpeg"),
+      require("../assets/manhosinhos/Borboleta9mm/Manhosinho9mmMarron.jpeg"),
+      require("../assets/manhosinhos/Borboleta9mm/Manhosinho9mmPreto.jpeg"),
+      require("../assets/manhosinhos/Borboleta9mm/Manhosinho9mmPretoListra.jpeg")
+    ]
+  },
+  {
+    id: 16,
+    name: "Manhosinho Borboleta – Tamanho 10mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Borboleta da Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada.",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Borboleta10mm/10mm1.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm2.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm3.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm4.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm5.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm6.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm7.jpeg"),
+      require("../assets/manhosinhos/Borboleta10mm/10mm8.jpeg")
+    ]
+  },
+  {
+    id: 17,
+    name: "Manhosinho Borboleta – Tamanho 12mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Borboleta da Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada.",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Borboleta12mm/12mm1.jpeg")
+    ]
+  },
+  {
+    id: 18,
+    name: "Manhosinho Cruzado – Tamanho 9mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Cruzado Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada. ",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Cruzado9mm/9mm1.jpeg"),
+      require("../assets/manhosinhos/Cruzado9mm/9mm2.jpeg"),
+      require("../assets/manhosinhos/Cruzado9mm/9mm3.jpeg"),
+    ]
+  },
+  {
+    id: 19,
+    name: "Manhosinho Cruzado – Tamanho 10mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Cruzado Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada. ",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Cruzado10mm/10mm1.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm2.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm3.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm4.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm5.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm6.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm7.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm8.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm9.jpeg"),
+      require("../assets/manhosinhos/Cruzado10mm/10mm10.jpeg"),
+    ]
+  },
+  {
+    id: 20,
+    name: "Manhosinho Cruzado – Tamanho 12mm",
+    price: "00,00",
+    description:
+      "O Manhosinho Cruzado Lake Monster foi projetado para os dias em que a atividade dos peixes está baixa e mais seletiva. Indicado para captura de tambaquis na superfície juntamente com a boia cevadeira. Chicote de nylon com 3m de comprimento, isca manhosinho com flutuadores em EVA, anzol Morigen n.º 14 e miçanga selecionada. ",
+    type: "Manhosinho",
+    images: [
+      require("../assets/manhosinhos/Cruzado12mm/12mm1.jpeg"),
+    ]
+  },
+  //Miçangas
+  {
+    id: 6,
+    name: "Miçangas Esportes (Mista)",
+    price: "00,00",
+    description:
+      "A Miçanga Esportes é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de anteninhas ou robozinhos, além de ser excelente para o uso no diretinho ou palminho.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 7,
+    name: "Miçangas Esportes (Basquete)",
+    price: "00,00",
+    description:
+      "A Miçanga basquete é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de anteninhas ou robozinhos, além de ser excelente para o uso no diretinho ou palminho.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 8,
+    name: "Miçangas Esportes (Tenis)",
+    price: "00,00",
+    description:
+      "A Miçanga Tenis é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de anteninhas ou robozinhos, além de ser excelente para o uso no diretinho ou palminho.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 9,
+    name: "Miçangas Esportes (Baisebol)",
+    price: "00,00",
+    description:
+      "A Miçanga Baisebol é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de anteninhas ou robozinhos, além de ser excelente para o uso no diretinho ou palminho.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 10,
+    name: "Miçangas Sorocaba Vermelha",
+    price: "00,00",
+    description:
+      "A Miçanga sorocaba é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de Pé de Galinha ou manhosinhos, além de ser excelente para o uso no diretinho ou palminho. Sua atratividade e versatilidade fazem dela uma escolha certeira para fisgar os maiores exemplares. ",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 11,
+    name: "Miçangas Abacaxi Verde Neon",
+    price: "00,00",
+    description:
+      "A Miçanga Abacaxi é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de Pé de Galinha ou manhosinhos, além de ser excelente para o uso no diretinho ou palminho. Sua atratividade e versatilidade fazem dela uma escolha certeira para fisgar os maiores exemplares.  ",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 12,
+    name: "Miçangas Abacaxi Roxa/Branco",
+    price: "00,00",
+    description:
+      "A Miçanga Abacaxi é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de Pé de Galinha ou manhosinhos, além de ser excelente para o uso no diretinho ou palminho. Sua atratividade e versatilidade fazem dela uma escolha certeira para fisgar os maiores exemplares.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 13,
+    name: "Miçangas Abacaxi Azul",
+    price: "00,00",
+    description:
+      "A Miçanga Abacaxi é perfeita para pescadores que buscam capturar grandes tambacus e tambaquis com eficiência. Disponível em pacotes com 08 unidades. Ideal para a montagem de Pé de Galinha ou manhosinhos, além de ser excelente para o uso no diretinho ou palminho. Sua atratividade e versatilidade fazem dela uma escolha certeira para fisgar os maiores exemplares.",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  },
+  {
+    id: 14,
+    name: "Miçangas Empanada P32",
+    price: "00,00",
+    description:
+      "Ideal para pesca em pesqueiros, as miçangas de pesca têm a finalidade de imitar os mais variados tipos de ração, trato/ceva, sementes e frutas que a maioria dos peixes como Pacu, Tambacu, Tambaqui, Tilápia e muitos outros estão acostumados a comer, atraindo-os mais facilmente para perto do anzol. Miçanga Empanada Pode ser usado em conjunto com EVA e ANZOL construindo qualquer modelo de anteninha ou no palminho para sub superfície entre 5 a 30 centimetros para baixo, revestida com ração. Contem 10 Unidades. ",
+    type: "Micangas",
+    image: "https://via.placeholder.com/300x200?text=Vara+de+Pesca"
+  }
+  //Vestimentas
+];
+
+function Produtos() {
+  const [busca, setBusca] = useState("");
+  const [filtroTipo, setFiltroTipo] = useState("");
+  const [produtoSelecionado, setProdutoSelecionado] = useState(null);
+  const [zoomImg, setZoomImg] = useState(null); // <- estado para zoom
+
+  const produtosFiltrados = produtos.filter((item) => {
+    const nomeMatch = item.name.toLowerCase().includes(busca.toLowerCase());
+    const tipoMatch = filtroTipo ? item.type === filtroTipo : true;
+    return nomeMatch && tipoMatch;
+  });
+
+  return (
+    <div className="produtos-page">
+      <h2>Nossos Produtos</h2>
+
+      {/* Área de Filtros */}
+      <div className="filtros">
+        <input
+          type="text"
+          placeholder="Buscar produto..."
+          value={busca}
+          onChange={(e) => setBusca(e.target.value)}
+        />
+
+        <select
+          value={filtroTipo}
+          onChange={(e) => setFiltroTipo(e.target.value)}
+        >
+          <option value="">Todos os Tipos</option>
+          <option value="Acessorios">Acessórios</option>
+          <option value="Antenas">Antenas</option>
+          <option value="Boias">Boias</option>
+          <option value="Equipamentos">Equipamentos</option>
+          <option value="Isca">Iscas</option>
+          <option value="Manhosinho">Manhosinho</option>
+          <option value="Micangas">Miçangas</option>
+          <option value="Vestimentas">Vestimentas</option>
+        </select>
+      </div>
+
+      {/* Produtos filtrados */}
+      <div className="produtos-grid">
+        {produtosFiltrados.length > 0 ? (
+          produtosFiltrados.map((item) => (
+            <div key={item.id} onClick={() => setProdutoSelecionado(item)}>
+              <ProductCard
+                image={item.images ? item.images[0] : item.image}
+                name={item.name}
+                price={item.price}
+              />
+            </div>
+          ))
+        ) : (
+          <p>Nenhum produto encontrado.</p>
+        )}
+      </div>
+
+      {/* Modal */}
+      {produtoSelecionado && (
+        <div
+          className="modal-overlay"
+          onClick={() => setProdutoSelecionado(null)}
+        >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3>{produtoSelecionado.name}</h3>
+
+            <div className="modal-images">
+              {(produtoSelecionado.images || [produtoSelecionado.image]).map(
+                (img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`${produtoSelecionado.name} ${index + 1}`}
+                    onClick={() => setZoomImg(img)} // clique abre zoom
+                    style={{ cursor: "zoom-in" }}
+                  />
+                )
+              )}
+            </div>
+
+            <p>
+              <strong>Preço:</strong> R$ {produtoSelecionado.price}
+            </p>
+            <p>{produtoSelecionado.description}</p>
+            <button onClick={() => setProdutoSelecionado(null)}>Fechar</button>
+          </div>
+        </div>
+      )}
+
+      {/* Zoom da Imagem */}
+      {zoomImg && (
+        <div className="zoom-overlay" onClick={() => setZoomImg(null)}>
+          <img src={zoomImg} alt="Zoom" className="zoom-img" />
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Produtos;

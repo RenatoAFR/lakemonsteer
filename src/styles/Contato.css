@@ -1,0 +1,143 @@
+.contato {
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.3);
+}
+
+/* Logo + Título */
+.contato-header img.contato-logo {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
+
+.contato-header h1 {
+  font-size: 2.5rem;
+  color: #39ff14;
+  margin-bottom: 10px;
+}
+
+.contato-header p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Container flex */
+.contato-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Formulário */
+.contato-form {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #39ff14;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contato-form label {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  background: transparent;
+  border: 1px solid #39ff14;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+}
+
+.contato-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.contato-form button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #39ff14;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato-form button:hover {
+  background-color: #2ecc71;
+}
+
+/* Opções de contato */
+.contato-opcoes {
+  flex: 1;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #39ff14;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contato-card svg {
+  font-size: 1.5rem;
+}
+
+/* Cores personalizadas */
+.contato-card.verde {
+  border-color: #39ff14;
+  color: #39ff14;
+}
+.contato-card.verde:hover {
+  background-color: #39ff14;
+  color: #000;
+}
+
+.contato-card.azul {
+  border-color: #00aaff;
+  color: #00aaff;
+}
+.contato-card.azul:hover {
+  background-color: #00aaff;
+  color: #000;
+}
+
+.contato-card.rosa {
+  border-color: #ff007f;
+  color: #ff007f;
+}
+.contato-card.rosa:hover {
+  background-color: #ff007f;
+  color: #000;
+}
+
+/* Rodapé */
+.contato-footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
