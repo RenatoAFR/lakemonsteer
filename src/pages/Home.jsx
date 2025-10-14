@@ -3,6 +3,11 @@ import monstro from "../assets/LogoSemFundo.png";
 import ProductCard from "../components/ProductCard";
 import Pescador from "../assets/SobreLoja.png";
 
+import anteninhaBolachaoImg from "../assets/antenas/BolachaoAmarelo.jpeg";
+import manhosinhoBorboleta12Img from "../assets/manhosinhos/Borboleta12mm/12mm1.jpeg";
+import robozinho12Img from "../assets/antenas/Robozinho12mm/12mm1.jpeg";
+
+
 // Exemplo de logos de parceiros
 //import parceiro1 from "../assets/parceiro1.png";
 //import parceiro2 from "../assets/parceiro2.png";
@@ -46,26 +51,29 @@ function Home() {
         <h2>NOSSOS DESTAQUES</h2>
         <div className="destaques-container">
           <ProductCard
-            nome="Produto em"
-            preco="$9.99"
-            imagem="https://via.placeholder.com/150"
-            botaoTexto="SAIBA MAIS"
-            botaoClasse="btn-verde"
+            name="Anteninha Bolachão"
+            price="R$ 9,99"
+            image={anteninhaBolachaoImg}
+            description="SAIBA MAIS"
+            btn-whats="btn-verde"
           />
+
           <ProductCard
-            nome="Produto"
-            preco="$29.99"
-            imagem="https://via.placeholder.com/150"
-            botaoTexto="COMPRAR PELO WHATS"
-            botaoClasse="btn-azul"
+            name="Manhosinho Borboleta"
+            price="R$ 29,99"
+            image={manhosinhoBorboleta12Img}
+            description="COMPRAR PELO WHATS"
+            btn-whats="btn-azul"
           />
+
           <ProductCard
-            nome="Sorescorges"
-            preco="$9.99"
-            imagem="https://via.placeholder.com/150"
-            botaoTexto="FARPA NGRSSMP"
-            botaoClasse="btn-verde"
+            image={robozinho12Img}
+            name="Robozinho 12mm"
+            price="R$ 9,99"
+            description="FARPA NGRSSMP"
+            btn-whats="btn-verde"
           />
+
         </div>
       </section>
 
